@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dawnimpulse.permissions.android" >
+    <application>
+        <activity
+            android:name=".handlers.PermissionsHandler$Inner"
+            android:theme="@style/AppTheme.NoActionBar.Translucent" />
+    </application>
+</manifest>
