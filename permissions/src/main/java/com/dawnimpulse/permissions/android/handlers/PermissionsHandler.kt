@@ -75,7 +75,7 @@ class PermissionsHandler {
             callback(false, null)
     }
 
-    fun isPermissionProvidedInManifest(permission: String): Boolean {
+    private fun isPermissionProvidedInManifest(permission: String): Boolean {
         val NAME = "Permissions"
         try {
             val packageInfo = context.packageManager.getPackageInfo(context.packageName, PackageManager.GET_PERMISSIONS)
