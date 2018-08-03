@@ -131,6 +131,7 @@ class PermissionsHandler {
                     Config.callback(null, true)
                 else
                     Config.callback(false, null)
+                finish()
             }
         }
     }

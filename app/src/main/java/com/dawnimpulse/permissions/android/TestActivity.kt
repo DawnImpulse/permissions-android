@@ -30,8 +30,8 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        Permissions.askWriteExternalStoragePermission(this,{no,yes->
+        Permissions.askWriteExternalStoragePermission(this) { no, yes->
             Log.d("Permissions","$no :: $yes")
-        })
+        }
     }
 }
