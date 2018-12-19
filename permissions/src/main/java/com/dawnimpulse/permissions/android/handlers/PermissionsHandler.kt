@@ -31,6 +31,7 @@ import com.dawnimpulse.permissions.android.utils.Config
  * @note Created on 2018-05-23 by Saksham
  *
  * @note Updates :
+ *  Saksham - 2018 12 19 - master - on back press callback
  */
 class PermissionsHandler {
     lateinit var context: Context
@@ -115,7 +116,6 @@ class PermissionsHandler {
         @RequiresApi(Build.VERSION_CODES.M)
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            Log.d("Test", "HERE")
             val permission = intent.extras.get(C.PERMISSION) as String
             requestPermissions(arrayOf<String>(permission), PERMISSION_REQUEST_CODE)
         }
@@ -133,6 +133,12 @@ class PermissionsHandler {
                     Config.callback(false, null)
                 finish()
             }
+        }
+
+        // on back press
+        override fun onBackPressed() {
+            Config.callback(false,null)
+            finish()
         }
     }
 }
