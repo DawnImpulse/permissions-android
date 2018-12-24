@@ -127,9 +127,12 @@ class PermissionsHandler {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
             if (requestCode == PERMISSION_REQUEST_CODE) {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    Config.callback(null, true)
-                else
+                if(grantResults.isNotEmpty()){
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                        Config.callback(null, true)
+                    else
+                        Config.callback(false, null)
+                }else
                     Config.callback(false, null)
                 finish()
             }

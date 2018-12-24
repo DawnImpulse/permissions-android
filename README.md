@@ -5,7 +5,7 @@
 
 - No more working through tons of lines of code and using different methods to ask & handle a simple permission.
 
-#### Current Features (v0.9.0)
+#### Current Features (v0.9.1)
 - Asking / checking various permissions functions.
 - Default permission flow as in Android.
 - **The library is written in kotlin using lambda functions so it may/may not be used with java.**
@@ -13,7 +13,7 @@
 #### Implementation
 
 ~~~
-	implementation 'com.dawnimpulse:permissions:0.9.0'
+	implementation 'com.dawnimpulse:permissions:0.9.1'
 ~~~
 
 #### Usage
@@ -26,6 +26,9 @@ Permissions.askWriteExternalStoragePermission(context, { no, yes->
 ~~~
 > Note: If you don't find a particular permission's method just simply call askPermission providing 3 parameters - permission, context, callback.
 #### Releases
+- v0.9.1
+    - Bug fix for denied permission handling
+
 - v0.9.0
     - Bug Fixes
 
