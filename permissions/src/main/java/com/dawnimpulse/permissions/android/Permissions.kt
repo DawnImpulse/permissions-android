@@ -22,6 +22,7 @@ import com.dawnimpulse.permissions.android.handlers.PermissionsHandler
  * @note Created on 2018-05-23 by Saksham
  *
  * @note Updates :
+ *  Saksham - 2019 02 05 - master - multiple permissions
  */
 object Permissions {
 
@@ -440,14 +441,14 @@ object Permissions {
      */
     fun askWriteExternalStoragePermission(context: Context, callback: (Any?, Any?) -> Unit) {
         var p = PermissionsHandler(context)
-        p.askPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,callback)
+        p.askPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, callback)
     }
 
     /**
      * any other permission available
      * @param permission
      */
-    fun isPermissionAvailable(permission:String,context: Context):Boolean{
+    fun isPermissionAvailable(permission: String, context: Context): Boolean {
         var p = PermissionsHandler(context)
         return p.isPermissionAvailable(permission)
     }
@@ -456,8 +457,47 @@ object Permissions {
      * ask any other permission
      * @param permission
      */
-    fun askPermission(permission:String,context: Context,callback: (Any?, Any?) -> Unit){
+    fun askPermission(permission: String, context: Context, callback: (Any?, Any?) -> Unit) {
         var p = PermissionsHandler(context)
-        p.askPermission(permission,callback)
+        p.askPermission(permission, callback)
     }
+
+    /**
+     * ask multiple permissions at a time
+     * @param permissions - list of permissions to ask
+     */
+    fun askMultiplePermissions(permissions: List<String>, context: Context, callback: (MutableList<Boolean>) -> Unit) {
+        loopingAskPermissions(permissions, context, 0, null, callback)
+    }
+
+    /**
+     * using functional programming to iterate over list of permission & handling one by one
+     * @param permissions - list of permissions to ask
+     * @param context
+     * @param position - position of permission to ask in the array
+     * @param responses - list of Boolean responses to permissions
+     * @param callback
+     */
+    private fun loopingAskPermissions(permissions: List<String>, context: Context, position: Int,
+                                      responses: MutableList<Boolean>?, callback: (MutableList<Boolean>) -> Unit) {
+
+        val resp = responses ?: listOf<Boolean>().toMutableList()
+
+        if (position != permissions.size) {
+            val permission = permissions[position]
+            askPermission(permission, context) { e, r ->
+                e?.let {
+                    resp.add(false)
+                }
+                r?.let {
+                    resp.add(true)
+                }
+                val newPosition = position + 1
+                loopingAskPermissions(permissions, context, newPosition, resp, callback)
+            }
+        } else
+            callback(resp)
+    }
+
+
 }

@@ -11,6 +11,7 @@ OR PERFORMANCE OF THIS SOFTWARE.
 */
 package com.dawnimpulse.permissions.android
 
+import android.Manifest
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -30,8 +31,15 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        Permissions.askWriteExternalStoragePermission(this) { no, yes->
-            Log.d("Permissions","$no :: $yes")
+        Permissions.askMultiplePermissions(
+                listOf(
+                        Manifest.permission.WRITE_CALENDAR,
+                        Manifest.permission.WRITE_CONTACTS,
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ), this
+        ){
+            Log.d("TestActivity","$it")
         }
     }
 }
