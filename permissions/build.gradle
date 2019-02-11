@@ -14,10 +14,10 @@ apply plugin: 'kotlin-android'
 
 ext {
     bintrayRepo = 'android'
-    bintrayName = 'permissions-android'
+    bintrayName = 'Permissions'
 
-    publishedGroupId = 'com.dawnimpulse'
-    libraryName = 'permissions'
+    publishedGroupId = 'org.sourcei.android'
+    libraryName = 'Permissions'
     artifact = 'permissions'
 
     libraryDescription = 'Easy & simple way to access / handle android permissions.'
@@ -25,7 +25,7 @@ ext {
     siteUrl = 'https://github.com/DawnImpulse/permissions-android'
     gitUrl = 'https://github.com/DawnImpulse/permissions-android.git'
 
-    libraryVersion = '0.9.1'
+    libraryVersion = '1.0.0'
 
     developerId = 'dawnimpulse'
     developerName = 'Saksham (Dawn Impulse)'

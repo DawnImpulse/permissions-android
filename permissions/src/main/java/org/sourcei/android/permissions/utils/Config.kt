@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+/*
 ISC License
-Copyright 2018, Saksham (DawnImpulse)
+
+Copyright 2018-2019, Saksham (DawnImpulse)
+
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted,
 provided that the above copyright notice and this permission notice appear in all copies.
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL
@@ -9,16 +10,17 @@ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR 
 INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
 WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE
 OR PERFORMANCE OF THIS SOFTWARE.
--->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.sourcei.android.permissions.TestActivity">
+*/
+package org.sourcei.android.permissions.utils
 
-    <Button
-        android:text="Hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+/**
+ * @author Saksham
+ *
+ * @note Last Branch Update -
+ * @note Created on 2018-05-23 by Saksham
+ *
+ * @note Updates :
+ */
+object Config{
+    lateinit var callback:(Any?,Any?)->Unit
+}

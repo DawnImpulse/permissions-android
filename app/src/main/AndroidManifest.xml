@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dawnimpulse.permissions.library">
+    package="com.sourcei.android.library">
 
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.dawnimpulse.permissions.android.TestActivity">
+        <activity android:name="org.sourcei.android.permissions.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
