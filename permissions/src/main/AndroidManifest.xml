@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sourcei.android.permissions" >
+    package="com.sourcei.android.permissions">
+
     <application>
         <activity
-            android:name="com.sourcei.android.permissions.org.sourcei.android.permissions.handlers.PermissionsHandler$Inner"
+            android:name="org.sourcei.android.permissions.handlers.PermissionsHandler$Inner"
             android:theme="@style/AppTheme.NoActionBar.Translucent" />
     </application>
 </manifest>

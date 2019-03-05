@@ -11,7 +11,7 @@
 #### Implementation
 
 ~~~
-	implementation 'org.sourcei.android:permissions:1.0.0'
+	implementation 'org.sourcei.android:permissions:1.0.1'
 ~~~
 
 #### Usage
@@ -42,6 +42,8 @@ Permissions.askMultiplePermissions(list, this){ result ->
 ```
 #### Releases
 - v1.0.1
+	- Bug Fixed : Crash due to manifest issues
+- v1.0.0
 	- New : Switched to my open sourced domain (sourcei.org)
 	- New : Asking multiple permissions as a list
 - v0.9.1

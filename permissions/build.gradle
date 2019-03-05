@@ -25,7 +25,7 @@ ext {
     siteUrl = 'https://github.com/DawnImpulse/permissions-android'
     gitUrl = 'https://github.com/DawnImpulse/permissions-android.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'dawnimpulse'
     developerName = 'Saksham (Dawn Impulse)'
